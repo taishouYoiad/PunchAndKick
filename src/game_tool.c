@@ -594,6 +594,7 @@ static void ResourceTool_UnPackDataFile(	const char *data_file,
 		sprintf( filepath, "%d/%s", dir_code, list[i].filepath );
 		/* 写入至输出文件 */
 		Graph_WritePNG( filepath, &graph_buff );
+		printf("--------%s",filepath);
 		_DEBUG_MSG("[%d/%d]: %s\n", i, n_files, filepath);
 	}
 

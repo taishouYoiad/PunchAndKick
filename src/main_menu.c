@@ -267,7 +267,8 @@ static void btn_2v2_mode_clicked( LCUI_Widget *widget, LCUI_WidgetEvent *unused 
 
 static void btn_network_battle_clicked( LCUI_Widget *widget, LCUI_WidgetEvent *unused )
 {
-	LCUI_MessageBoxW( MB_ICON_WARNING, L"此功能暂未开发。", L"提示", MB_BTN_OK );
+	// LCUI_MessageBoxW( MB_ICON_WARNING, L"此功能暂未开发。", L"提示", MB_BTN_OK );
+	Game_InitLANBattle();
 }
 
 static void scuffle_game_btn_clicked( LCUI_Widget *widget, LCUI_WidgetEvent *unused )

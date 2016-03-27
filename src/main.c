@@ -1,4 +1,4 @@
-﻿/* ****************************************************************************
+/* ****************************************************************************
  * Punch And Kick -- a simple 2D Fighting Game.
  *
  * Copyright (C) 2013 by
@@ -62,9 +62,10 @@
 #include "game_menubtn.h"
 #include "game_menu.h"
 #include "game_config.h"
+#include "lan_battle.c"
 
 #define TEXT_COPYRIGHT_EN	L"Developed by LC-Games, Copyright © 2013 LC-Games, All Rights Reserved."
-#define TEXT_COPYRIGHT_CN	L"本游戏由 LC-Games 开发 , LC-Games 保留所有权利。"
+#define TEXT_COPYRIGHT_CN	L"本游戏由 LC-Games 开发 , LC-Games 保留所有权利."
 
 static int main_battle_id;
 static LCUI_Thread main_thread_id;
@@ -212,11 +213,15 @@ static void Game_DemoThread( void *arg )
 	/* 将演示对战的对战场景加入至主界面 */
 	Widget_Container_Add( Game_GetMainUI(), demo_scene );
 	/* 设置两个对战角色，由AI控制 */
-	GameBattle_SetPlayer( battle_id, 1, ROLE_KUNIO, FALSE );
+	GameBattle_SetPlayer( battle_id, 1, ROLE_TORAJI, FALSE );
 	GameBattle_SetPlayer( battle_id, 2, ROLE_RIKI, FALSE );
+	GameBattle_SetPlayer( battle_id, 3, ROLE_RIKI, FALSE );
+	GameBattle_SetPlayer( battle_id, 4, ROLE_RIKI, FALSE );       
 	/* 启用这两个对战角色 */
 	GameBattle_EnablePlayer( battle_id, 1, TRUE );
 	GameBattle_EnablePlayer( battle_id, 2, TRUE );
+	GameBattle_EnablePlayer( battle_id, 3, TRUE );
+	GameBattle_EnablePlayer( battle_id, 4, TRUE );
 	/* 设置这两个对战角色为无敌 */
 	GameBattlePlayer_SetInvincible( battle_id, 1, TRUE );
 	GameBattlePlayer_SetInvincible( battle_id, 2, TRUE );
@@ -416,7 +421,7 @@ static void Game_AddMoreCPUPlayer( int battle_id )
 	}
 }
 
-static int Game_InitFight( int role_id[4] )
+static int Game_InitFight( int role_id[4] ,int my_id)
 {
 	int ret, battle_id;
 	LCUI_Graph stage_img;
@@ -428,8 +433,8 @@ static int Game_InitFight( int role_id[4] )
 	if( ret != 0 ) {
 		LCUI_MessageBoxW(
 			MB_ICON_ERROR,
-			L"场景资源载入出错，请检查程序的完整性！",
-			L"错误", MB_BTN_OK );
+			L"场景载入出错",
+			L"错误",MB_BTN_OK );
 		return ret;
 	}
 	
@@ -450,7 +455,7 @@ static int Game_InitFight( int role_id[4] )
 
 	Game_AddCPUPlayerRole( battle_id, role_id );
 	GameBattle_SetPlayer( battle_id, 1, role_id[0], TRUE );
-	GameBattle_SetPlayer( battle_id, 2, role_id[1], FALSE );
+	GameBattle_SetPlayer( battle_id, 2, role_id[1], TRUE );
 	GameBattle_SetPlayer( battle_id, 3, role_id[2], FALSE );
 	GameBattle_SetPlayer( battle_id, 4, role_id[3], FALSE );
 	GameBattle_EnablePlayer( battle_id, 1, TRUE );
@@ -468,7 +473,7 @@ static int Game_InitFight( int role_id[4] )
 	
 	GameConfig_GetKeyControl( &ctrlkey );
 	/* 设置1号玩家的控制键 */
-	GameBattle_SetPlayerControlKey( battle_id, 1, &ctrlkey );
+	GameBattle_SetPlayerControlKey( battle_id, my_id, &ctrlkey );
 
 	Game_InitPlayerStatusArea( battle_id );
 	Game_InitPlayerPos( battle_id );
@@ -556,6 +561,7 @@ static void Game_MainThread( void *arg )
 {
 	int role_id[4];
 	int demo_battle;
+	int my_id;
 	LCUI_Thread t;
 
 	srand((unsigned int)time(NULL));
@@ -578,22 +584,26 @@ static void Game_MainThread( void *arg )
 	
 	GameMsgLoopStart();
 	
-	demo_battle = GameBattle_New();
-	LCUIThread_Create( &t, Game_DemoThread, (void*)demo_battle );
+	// demo_battle = GameBattle_New();
+	// LCUIThread_Create( &t, Game_DemoThread, (void*)demo_battle );
 	while(1) {
-		role_id[0] = Game_GetSelectedRole();
-		if( role_id[0] == -1 ) {
+		// role_id[0] = Game_GetSelectedRole();
+		role_id[0] = Game_GetRoleID(1);
+		role_id[1] = Game_GetRoleID(2);
+		my_id = Game_GetMyID();
+		if( role_id[0] == -1 || role_id[1] == -1) {
 			LCUI_MSleep(100);
 			continue;
 		}
 		/* 暂停演示对战 */
-		GameBattle_Pause( demo_battle, TRUE );
+		// GameBattle_Pause( demo_battle, TRUE );
+
 		GameMenu_OnlyShowMainMenu();
 		Game_HideMainUI();
-		main_battle_id = Game_InitFight( role_id );
+		main_battle_id = Game_InitFight( role_id ,my_id);
 		Game_StartFight( main_battle_id );
 		/* 继续演示对战 */
-		GameBattle_Pause( demo_battle, FALSE );
+		// GameBattle_Pause( demo_battle, FALSE );
 		Game_ShowMainUI();
 	}
 }
@@ -624,7 +634,7 @@ static int Game_LoadResource(void)
 	if( ret != 0 ) {
 		LCUI_MessageBoxW(
 			MB_ICON_ERROR,
-			L"游戏资源载入出错，请检查程序的完整性！",
+			L"游戏资源载入出错，请检查程序的完整性--",
 			L"错误", MB_BTN_OK );
 		return -1;
 	}
@@ -655,7 +665,7 @@ int main( int argc, char **argv )
 {
 	int ret, mode;
 	LCUI_Thread t;
-//#define DEBUG
+#define DEBUG
 #if defined (LCUI_BUILD_IN_WIN32) && defined (DEBUG)
 	InitConsoleWindow();
 #endif

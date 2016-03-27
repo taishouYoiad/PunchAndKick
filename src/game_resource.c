@@ -1,4 +1,4 @@
-ï»¿/* ****************************************************************************
+/* ****************************************************************************
  * Punch And Kick -- a simple 2D Fighting Game.
  *
  * Copyright (C) 2013 by
@@ -22,27 +22,27 @@
  * ***************************************************************************/
 
 /* ****************************************************************************
- * Punch And Kick -- ä¸€ä¸ªæ™®é€šçš„2Dæ ¼æ–—æ¸¸æˆ
+ * Punch And Kick -- Ò»¸öÆÕÍ¨µÄ2D¸ñ¶·ÓÎÏ·
  *
- * ç‰ˆæƒæ‰€æœ‰ (C) 2013 å½’å±äº
- * åˆ˜è¶…
+ * °æÈ¨ËùÓĞ (C) 2013 ¹éÊôÓÚ
+ * Áõ³¬
  *
- * è¿™ä¸ªæ–‡ä»¶æ˜¯ Punch And Kick é¡¹ç›®çš„ä¸€éƒ¨åˆ†ï¼Œå¹¶ä¸”åªå¯ä»¥æ ¹æ®GPLv2è®¸å¯åè®®æ¥ä½¿ç”¨ã€
- * æ›´æ”¹å’Œå‘å¸ƒã€‚
+ * Õâ¸öÎÄ¼şÊÇ Punch And Kick ÏîÄ¿µÄÒ»²¿·Ö£¬²¢ÇÒÖ»¿ÉÒÔ¸ù¾İGPLv2Ğí¿ÉĞ­ÒéÀ´Ê¹ÓÃ¡¢
+ * ¸ü¸ÄºÍ·¢²¼¡£
  *
- * (GPLv2 æ˜¯ GNUé€šç”¨å…¬å…±è®¸å¯è¯ç¬¬äºŒç‰ˆ çš„è‹±æ–‡ç¼©å†™)
+ * (GPLv2 ÊÇ GNUÍ¨ÓÃ¹«¹²Ğí¿ÉÖ¤µÚ¶ş°æ µÄÓ¢ÎÄËõĞ´)
  *
- * ç»§ç»­ä½¿ç”¨ã€ä¿®æ”¹æˆ–å‘å¸ƒæœ¬æ–‡ä»¶ï¼Œè¡¨æ˜æ‚¨å·²ç»é˜…è¯»å¹¶å®Œå…¨ç†è§£å’Œæ¥å—è¿™ä¸ªè®¸å¯åè®®ã€‚
+ * ¼ÌĞøÊ¹ÓÃ¡¢ĞŞ¸Ä»ò·¢²¼±¾ÎÄ¼ş£¬±íÃ÷ÄúÒÑ¾­ÔÄ¶Á²¢ÍêÈ«Àí½âºÍ½ÓÊÜÕâ¸öĞí¿ÉĞ­Òé¡£
  *
- * Punch And Kick é¡¹ç›®æ˜¯åŸºäºæŠ€æœ¯äº¤æµç›®çš„è€ŒåŠ ä»¥æ•£å¸ƒçš„ï¼Œä½†ä¸è´Ÿä»»ä½•æ‹…ä¿è´£ä»»ï¼Œä¾‹
- * å¦‚ï¼šç¨³å®šæ€§ã€å¯ç©æ€§ã€è¶£å‘³æ€§ç­‰çš„æ‹…ä¿ï¼Œç”šè‡³æ²¡æœ‰é€‚é”€æ€§æˆ–ç‰¹å®šç”¨é€”çš„éšå«æ‹…ä¿ï¼Œè¯¦
- * æƒ…è¯·å‚ç…§GPLv2è®¸å¯åè®®ã€‚
+ * Punch And Kick ÏîÄ¿ÊÇ»ùÓÚ¼¼Êõ½»Á÷Ä¿µÄ¶ø¼ÓÒÔÉ¢²¼µÄ£¬µ«²»¸ºÈÎºÎµ£±£ÔğÈÎ£¬Àı
+ * Èç£ºÎÈ¶¨ĞÔ¡¢¿ÉÍæĞÔ¡¢È¤Î¶ĞÔµÈµÄµ£±££¬ÉõÖÁÃ»ÓĞÊÊÏúĞÔ»òÌØ¶¨ÓÃÍ¾µÄÒşº¬µ£±££¬Ïê
+ * ÇéÇë²ÎÕÕGPLv2Ğí¿ÉĞ­Òé¡£
  *
- * æ‚¨åº”å·²æ”¶åˆ°é™„éšäºæœ¬æ–‡ä»¶çš„GPLv2è®¸å¯åè®®çš„å‰¯æœ¬ï¼Œå®ƒé€šå¸¸åœ¨LICENSE.TXTæ–‡ä»¶ä¸­ï¼Œå¦‚æœ
- * æ²¡æœ‰ï¼Œè¯·æŸ¥çœ‹ï¼š<http://www.gnu.org/licenses/>.
+ * ÄúÓ¦ÒÑÊÕµ½¸½ËæÓÚ±¾ÎÄ¼şµÄGPLv2Ğí¿ÉĞ­ÒéµÄ¸±±¾£¬ËüÍ¨³£ÔÚLICENSE.TXTÎÄ¼şÖĞ£¬Èç¹û
+ * Ã»ÓĞ£¬Çë²é¿´£º<http://www.gnu.org/licenses/>.
  * ***************************************************************************/
 
-// æ¸¸æˆèµ„æºç®¡ç†æ¨¡å—
+// ÓÎÏ·×ÊÔ´¹ÜÀíÄ£¿é
 
 #include <LCUI_Build.h>
 #include LC_LCUI_H
@@ -50,9 +50,9 @@
 
 #include "game.h"
 
-/**æ–‡ä»¶å¤´éƒ¨çš„æ ‡è®°æ–‡æœ¬ */
+/**ÎÄ¼şÍ·²¿µÄ±ê¼ÇÎÄ±¾ */
 #define HEADER_MARK_TEXT	"LC-GAMES Graphics Resource File"
-/** æ¯ä¸ªèµ„æºæ•°æ®å—çš„æ ‡è®°æ–‡æœ¬ */
+/** Ã¿¸ö×ÊÔ´Êı¾İ¿éµÄ±ê¼ÇÎÄ±¾ */
 #define BLOCK_MARK_TEXT		"LC-GAMES Graphics Data Block"
 
 #define MAX_MARK_TEXT_LEN	64
@@ -93,7 +93,7 @@ static void GraphResClass_Destroy( void *arg )
 	Queue_Destroy( &res_class->graph_res );
 }
 
-/** åˆå§‹åŒ– */
+/** ³õÊ¼»¯ */
 LCUI_API int GameGraphRes_Init( void )
 {
 	if( library_init ) {
@@ -104,14 +104,14 @@ LCUI_API int GameGraphRes_Init( void )
 	return 0;
 }
 
-/** é‡Šæ”¾å…¨éƒ¨èµ„æº */
+/** ÊÍ·ÅÈ«²¿×ÊÔ´ */
 LCUI_API void GameGraphRes_FreeAll( void )
 {
 	library_init = FALSE;
 	Queue_Destroy( &resource_library );
 }
 
-/** æŸ¥æ‰¾èµ„æº */
+/** ²éÕÒ×ÊÔ´ */
 static GraphResItem *GameGraphRes_FindItem( GraphResClass *res_class, int item_id )
 {
 	int i, n;
@@ -133,7 +133,7 @@ static GraphResItem *GameGraphRes_FindItem( GraphResClass *res_class, int item_i
 	return NULL;
 }
 
-/** æŸ¥æ‰¾èµ„æºç±» */
+/** ²éÕÒ×ÊÔ´Àà */
 static GraphResClass *GameGraphRes_FindClass( int class_id )
 {
 	int i, n;
@@ -155,7 +155,7 @@ static GraphResClass *GameGraphRes_FindClass( int class_id )
 	return NULL;
 }
 
-/** é‡Šæ”¾æŒ‡å®šç±»åçš„èµ„æº */
+/** ÊÍ·ÅÖ¸¶¨ÀàÃûµÄ×ÊÔ´ */
 LCUI_API int GameGraphRes_Free( const char *class_name )
 {
 	int class_id;
@@ -176,7 +176,7 @@ static void GraphResItem_Destroy( void *arg )
 	Graph_Free( &item->graph );
 }
 
-/** æ·»åŠ ä¸€ä¸ªæ–°èµ„æºç±»ï¼Œè¿”å›è¯¥èµ„æºç±»çš„æ ‡è¯†å· */
+/** Ìí¼ÓÒ»¸öĞÂ×ÊÔ´Àà£¬·µ»Ø¸Ã×ÊÔ´ÀàµÄ±êÊ¶ºÅ */
 LCUI_API int GameGraphRes_AddClass( const char *class_name )
 {
 	int class_id;
@@ -198,7 +198,7 @@ LCUI_API int GameGraphRes_AddClass( const char *class_name )
 	return class_id;
 }
 
-/** å‘æŒ‡å®šèµ„æºç±»ä¸­åŠ å…¥å›¾åƒèµ„æº */
+/** ÏòÖ¸¶¨×ÊÔ´ÀàÖĞ¼ÓÈëÍ¼Ïñ×ÊÔ´ */
 LCUI_API int GameGraphRes_AddGraph( int class_id, const char *name, LCUI_Graph *graph )
 {
 	int item_id;
@@ -225,7 +225,7 @@ LCUI_API int GameGraphRes_AddGraph( int class_id, const char *name, LCUI_Graph *
 	return 0;
 }
 
-/** ä»æ–‡ä»¶å†…è½½å…¥èµ„æº */
+/** ´ÓÎÄ¼şÄÚÔØÈë×ÊÔ´ */
 LCUI_API int GameGraphRes_LoadFromFile( const char *filepath )
 {
 	FILE *fp;
@@ -233,8 +233,11 @@ LCUI_API int GameGraphRes_LoadFromFile( const char *filepath )
 	ResFileHeaderData header_data;
 	GraphResDataBlock data_block;
 	LCUI_Graph graph_buff;
-
-	fp = fopen( filepath, "rb" );
+	char fullpath[80];
+	strcpy(fullpath,"F:\\git\\PunchAndKick-early-demo\\bin\\");
+	strcat(fullpath,filepath);
+	printf("------%s", fullpath);
+	fp = fopen( fullpath, "rb" );
 	if( fp == NULL ) {
 		return -1;
 	}
@@ -243,7 +246,7 @@ LCUI_API int GameGraphRes_LoadFromFile( const char *filepath )
 		fclose( fp );
 		return -2;
 	}
-	/* éªŒè¯æ–‡ä»¶å¤´ä¸­çš„æ ‡è®°æ–‡æœ¬ */
+	/* ÑéÖ¤ÎÄ¼şÍ·ÖĞµÄ±ê¼ÇÎÄ±¾ */
 	if( strcmp( header_data.mark, HEADER_MARK_TEXT ) != 0 ) {
 		fclose( fp );
 		return -3;
@@ -259,9 +262,9 @@ LCUI_API int GameGraphRes_LoadFromFile( const char *filepath )
 		if( count < 1 ) {
 			break;
 		}
-		/* éªŒè¯æ•°æ®å—çš„æ ‡è®°æ–‡æœ¬ */
+		/* ÑéÖ¤Êı¾İ¿éµÄ±ê¼ÇÎÄ±¾ */
 		if( strcmp( data_block.mark, BLOCK_MARK_TEXT ) != 0 ) {
-			/* å°†æ–‡ä»¶æŒ‡é’ˆç§»å‘è¯»è¯¥æ•°æ®å—å‰çš„ä½ç½®çš„ä¸‹ä¸ªä½ç½® */
+			/* ½«ÎÄ¼şÖ¸ÕëÒÆÏò¶Á¸ÃÊı¾İ¿éÇ°µÄÎ»ÖÃµÄÏÂ¸öÎ»ÖÃ */
 			fseek( fp, SEEK_CUR, -(int)(sizeof(GraphResDataBlock)-1) );
 			--i;
 			continue;
@@ -277,7 +280,7 @@ LCUI_API int GameGraphRes_LoadFromFile( const char *filepath )
 		DEBUG_MSG("read graph, color type: %d, width: %d, height: %d\n",
 			graph_buff.color_type, data_block.w, data_block.h );
 		n_pixel = data_block.w * data_block.h;
-		/* è¯»å–åƒç´ æ•°æ® */
+		/* ¶ÁÈ¡ÏñËØÊı¾İ */
 		for(j=0; j<k; ++j) {
 			count = fread(	graph_buff.rgba[j], 
 					sizeof(unsigned char), n_pixel, fp );
@@ -295,7 +298,7 @@ error_exit:
 	return -5;
 }
 
-/** å°†æŒ‡å®šç±»èµ„æºå†™å…¥è‡³æ–‡ä»¶ */
+/** ½«Ö¸¶¨Àà×ÊÔ´Ğ´ÈëÖÁÎÄ¼ş */
 LCUI_API int GameGraphRes_WriteToFile( const char *filepath, const char *class_name )
 {
 	FILE *fp;
@@ -320,9 +323,9 @@ LCUI_API int GameGraphRes_WriteToFile( const char *filepath, const char *class_n
 
 	strncpy( header_data.mark, HEADER_MARK_TEXT, MAX_MARK_TEXT_LEN );
 	strncpy( header_data.class_name, class_name, MAX_TEXT_LEN );
-	/* ä¿å­˜èµ„æºæ€»æ•° */
+	/* ±£´æ×ÊÔ´×ÜÊı */
 	header_data.total_number = Queue_GetTotal( &p_class_data->graph_res );
-	/* å…ˆå°†æ–‡ä»¶å¤´æ•°æ®å†™è¿›å» */
+	/* ÏÈ½«ÎÄ¼şÍ·Êı¾İĞ´½øÈ¥ */
 	count = fwrite( &header_data, sizeof(ResFileHeaderData), 1, fp );
 	DEBUG_MSG("write file header data...\n");
 	if( count < 1 ) {
@@ -339,14 +342,14 @@ LCUI_API int GameGraphRes_WriteToFile( const char *filepath, const char *class_n
 		if( !p_item ) {
 			continue;
 		}
-		/* å‡†å¤‡æœ¬å¼ å›¾åƒçš„ä¿¡æ¯ */
+		/* ×¼±¸±¾ÕÅÍ¼ÏñµÄĞÅÏ¢ */
 		data_block.color_type = p_item->graph.color_type;
 		data_block.w = p_item->graph.w;
 		data_block.h = p_item->graph.h;
 		strncpy( data_block.name, p_item->name, MAX_TEXT_LEN );
 		DEBUG_MSG("write graph item: %p, name: %s, size: %d,%d\n",
 			p_item, p_item->name, data_block.w, data_block.h );
-		/* å†™å…¥æœ¬å¼ å›¾åƒçš„ä¿¡æ¯ */
+		/* Ğ´Èë±¾ÕÅÍ¼ÏñµÄĞÅÏ¢ */
 		count = fwrite( &data_block, sizeof(GraphResDataBlock), 1, fp );
 		if( count < 1 ) {
 			goto error_exit;
@@ -358,7 +361,7 @@ LCUI_API int GameGraphRes_WriteToFile( const char *filepath, const char *class_n
 			k = 3;
 		}
 		DEBUG_MSG("write graph pixel data, total pixel: %d\n", n_pixel );
-		/* å†™å…¥åƒç´ æ•°æ® */
+		/* Ğ´ÈëÏñËØÊı¾İ */
 		for(j=0; j<k; ++j) {
 			count = fwrite(
 				p_item->graph.rgba[j],
@@ -380,7 +383,7 @@ error_exit:;
 	return -4;;
 }
 
-/** åœ¨æŒ‡å®šèµ„æºç±»é‡Œé¢è·å–æŒ‡å®šåç§°çš„èµ„æº */
+/** ÔÚÖ¸¶¨×ÊÔ´ÀàÀïÃæ»ñÈ¡Ö¸¶¨Ãû³ÆµÄ×ÊÔ´ */
 LCUI_API int GameGraphRes_GetGraph(	const char *class_name,
 					const char *name,
 					LCUI_Graph *buff )

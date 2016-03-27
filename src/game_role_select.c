@@ -199,6 +199,7 @@ static void btn_select_role_clicked( LCUI_Widget *widget, LCUI_WidgetEvent *unus
 	Game_HideRoleSelectBox();
 	LCUISleeper_BreakSleep( &sleeper );
 	Game_DestroyRoleSelectBox();
+	Lan_UpdateGameRole(current_select_role,1);
 }
 
 /** 更新角色的动作动画 */
